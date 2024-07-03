@@ -9,6 +9,7 @@
       src="https://kit.fontawesome.com/3d3f071495.js"
       crossorigin="anonymous"
     ></script>
+    <script src="./script.js"></script>
   </head>
   <body>
     <div id="top">
@@ -16,8 +17,8 @@
     </div>
     <div id="wrap">
       <header>
-        <div>
-          <img src="./img/header.jpg" alt="header_bg" class="header_img" />
+        <div class="header_img">
+          <img src="./img/header.jpg" alt="header_bg" />
         </div>
         <div id="header_con">
           <img src="./img/play_logo.png" alt="play_logo" />
@@ -76,16 +77,16 @@
           <div id="portfolio_con">
             <h3>귀엽고 하찮은 나의 포트폴리오</h3>
             <p>2019 - 2023년까지의 저의 디자인 인생을 담았습니다.</p>
-            <a href="#">보러가기</a>
+            <a href="#" class="watch">보러가기</a>
           </div>
         </div>
         <div id="tmi">
           <p><img src="./img/tmi.png" alt="tmi" /></p>
           <div class="tmi_box">
             <div class="hash_tag">
-              <a href="#">강아지</a>
-              <a href="#">마멜덕후</a>
-              <a href="#">결혼</a>
+              <a href="#">#강아지</a>
+              <a href="#">#마멜덕후</a>
+              <a href="#">#결혼</a>
             </div>
             <div class="tmi_con">
               <div class="tmi_photo">
@@ -108,9 +109,21 @@
     <div id="bottom">
       <img src="./img/bottom_play.png" alt="bottom_play" />
       <div class="sns">
-        <a href="#"><img src="./img/facebook.svg" alt="" /></a>
-        <a href="#"><img src="./img/facebook.svg" alt="" /></a>
-        <a href="#"><img src="./img/facebook.svg" alt="" /></a>
+        <a href="https://blog.naver.com/kidstol1217" target="_blank"
+          ><img src="./img/blog.png" alt="blog"
+        /></a>
+        <a href="#" target="_blank"
+          ><img src="./img/instagram.svg" alt="instagram"
+        /></a>
+        <a href="https://www.youtube.com/@user-tu7dc4rs2h" target="_blank"
+          ><img src="./img/youtube.svg" alt="youtube"
+        /></a>
+      </div>
+    </div>
+    <div id="overlay" class="overlay">
+      <div class="overlay-content">
+        <img id="overlayImage" src="./img/overlay.png" alt="portfolio" />
+        <span id="closeOverlay" class="close">&times;</span>
       </div>
     </div>
   </body>
