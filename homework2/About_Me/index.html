@@ -77,16 +77,26 @@
           <div id="portfolio_con">
             <h3>귀엽고 하찮은 나의 포트폴리오</h3>
             <p>2019 - 2023년까지의 저의 디자인 인생을 담았습니다.</p>
-            <a href="#" class="watch">보러가기</a>
+            <button id="open">보러가기</button>
+            <main id="modal_box">
+              <section id="modal_contents">
+                <span id="close">
+                  <i class="fa-solid fa-xmark"></i>
+                </span>
+                <article id="portfolio">
+                  <img src="./img/modal.jpg" alt="portfolio" />
+                </article>
+              </section>
+            </main>
           </div>
         </div>
         <div id="tmi">
           <p><img src="./img/tmi.png" alt="tmi" /></p>
           <div class="tmi_box">
             <div class="hash_tag">
-              <a href="#">#강아지</a>
-              <a href="#">#마멜덕후</a>
-              <a href="#">#결혼</a>
+              <button>#강아지</button>
+              <button>#마멜덕후</button>
+              <button>#결혼</button>
             </div>
             <div class="tmi_con">
               <div class="tmi_photo">
@@ -118,12 +128,6 @@
         <a href="https://www.youtube.com/@user-tu7dc4rs2h" target="_blank"
           ><img src="./img/youtube.svg" alt="youtube"
         /></a>
-      </div>
-    </div>
-    <div id="overlay" class="overlay">
-      <div class="overlay-content">
-        <img id="overlayImage" src="./img/overlay.png" alt="portfolio" />
-        <span id="closeOverlay" class="close">&times;</span>
       </div>
     </div>
   </body>

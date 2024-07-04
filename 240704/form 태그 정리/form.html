@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>폼 예제</title>
+</head>
+<body>
+  <h1>회원가입 폼</h1>
+  <form action="/submit_form" method="post">
+    <label for="username">사용자 이름:</label>
+    <input type="text" id="username" name="username" required><br><br>
+
+    <label for="password">비밀번호:</label>
+    <input type="password" id="password" name="password" required><br><br>
+
+    <label for="email">이메일:</label>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <label for="age">나이:</label>
+    <input type="number" id="age" name="age" min="1" max="100"><br><br>
+
+    <label for="gender">성별:</label><br>
+    <input type="radio" id="male" name="gender" value="male">
+    <label for="male">남성</label><br>
+    <input type="radio" id="female" name="gender" value="female">
+    <label for="female">여성</label><br><br>
+
+    <label for="hobbies">취미:</label><br>
+    <input type="checkbox" id="hobby1" name="hobbies" value="reading">
+    <label for="hobby1">독서</label><br>
+    <input type="checkbox" id="hobby2" name="hobbies" value="traveling">
+    <label for="hobby2">여행</label><br><br>
+
+    <label for="profile">프로필 사진:</label>
+    <input type="file" id="profile" name="profile"><br><br>
+
+    <label for="bio">자기소개:</label><br>
+    <textarea id="bio" name="bio" rows="4" cols="50"></textarea><br><br>
+
+    <label for="country">국가:</label>
+    <select id="country" name="country">
+      <option value="kr">대한민국</option>
+      <option value="us">미국</option>
+      <option value="jp">일본</option>
+    </select><br><br>
+
+    <button type="submit">제출</button>
+  </form>
+</body>
+</html>
