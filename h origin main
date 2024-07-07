@@ -1,0 +1,43 @@
+[33mcommit 7d986942af9f2a748f5cf226b093c2d5508231a0[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: HarinWon <kidstol1217@naver.com>
+Date:   Wed Jul 3 16:44:08 2024 +0900
+
+    “240703”
+
+[33mcommit c8ed9feb802ac99a1139b98e4181e8ad370c6e53[m[33m ([m[1;31morigin/main[m[33m)[m
+Merge: ab6aa71 8c0bf25
+Author: HarinWon <kidstol1217@naver.com>
+Date:   Mon Jul 1 02:29:23 2024 +0900
+
+    병합 충돌 해결
+
+[33mcommit ab6aa71fcd93cd4e0687ef4102b178bd2d9adb46[m
+Merge: c478b5e ab85569
+Author: HarinWon <kidstol1217@naver.com>
+Date:   Mon Jul 1 02:14:16 2024 +0900
+
+    Resolve merge conflicts
+
+[33mcommit c478b5eefce0b7ac5a91e4525fc0f76dc3b78f3d[m
+Author: HarinWon <kidstol1217@naver.com>
+Date:   Mon Jul 1 02:11:51 2024 +0900
+
+    240701
+
+[33mcommit ab85569b6835c8e55aaf45ece3aca44725e02370[m
+Author: HarinWon <kidstol1217@naver.com>
+Date:   Sun Jun 30 16:20:19 2024 +0900
+
+    커밋 메시지
+
+[33mcommit 6cee524e7349add29182fc44b9d573f893c3268c[m
+Author: HarinWon <kidstol1217@naver.com>
+Date:   Fri Jun 28 17:06:39 2024 +0900
+
+    “240628”
+
+[33mcommit 8c0bf25345cac7d84d4eb5401e703e59fff19bbb[m
+Author: HarinWon <164459345+HarinWon@users.noreply.github.com>
+Date:   Fri Jun 28 16:43:10 2024 +0900
+
+    Initial commit
