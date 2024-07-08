@@ -1,51 +1,78 @@
-// modal
+// script.js
 document.addEventListener("DOMContentLoaded", () => {
-    const btn = document.querySelector("#open");
-    const modalBox = document.querySelector("#modal_box");
-    const close = document.querySelector("#close");
+  // 모달 관련 이벤트 리스너
+  const modalBtn = document.querySelector("#open");
+  const modalBox = document.querySelector("#modal_box");
+  const modalClose = document.querySelector("#close");
 
-    btn.addEventListener("click", () => {
-        modalBox
-            .classList
-            .add("active");
-    });
+  modalBtn.addEventListener("click", () => {
+    modalBox.classList.add("active");
+  });
 
-    close.addEventListener("click", () => {
-        modalBox
-            .classList
-            .remove("active");
-    });
+  modalClose.addEventListener("click", () => {
+    modalBox.classList.remove("active");
+  });
 
-});
+  // 프로필 슬라이더 관련 이벤트 리스너
+  const profilePrevBtn = document.querySelector(".fa-chevron-left");
+  const profileNextBtn = document.querySelector(".fa-chevron-right");
+  const profileSlider = document.querySelector(".profile_slider");
+  const profileSlideItems = document.querySelectorAll(".profile_slider_con");
+  const profileSlideWidth = profileSlideItems[0].offsetWidth;
+  let profileCurrentOffset = 0;
 
-// profile_slider 
-document.addEventListener('DOMContentLoaded', (event) => {
-    const prevBtn = document.querySelector('.fa-chevron-left');
-    const nextBtn = document.querySelector('.fa-chevron-right');
-    const slider = document.querySelector('.profile_slider');
-    const slideItems = document.querySelectorAll('.profile_slider_con');
-    const slideWidth = slideItems[0].offsetWidth;
-    let currentOffset = 0;
-
-    // 슬라이드를 이동시키는 함수
-    function moveSlider(offset) {
-        currentOffset += offset;
-        if (currentOffset > 0) {
-            currentOffset = -(slideItems.length - 1) * slideWidth;
-        } else if (currentOffset < -(slideItems.length - 1) * slideWidth) {
-            currentOffset = 0;
-        }
-        slider.style.transform = `translateX(${currentOffset}px)`;
+  // 프로필 슬라이더 이동 함수
+  function moveProfileSlider(offset) {
+    profileCurrentOffset += offset;
+    if (profileCurrentOffset > 0) {
+      profileCurrentOffset =
+        -(profileSlideItems.length - 1) * profileSlideWidth;
+    } else if (
+      profileCurrentOffset <
+      -(profileSlideItems.length - 1) * profileSlideWidth
+    ) {
+      profileCurrentOffset = 0;
     }
+    profileSlider.style.transform = `translateX(${profileCurrentOffset}px)`;
+  }
 
-    // 이전 버튼 클릭 이벤트
-    prevBtn.addEventListener('click', () => {
-        moveSlider(slideWidth); // 1000px 좌측 이동
-    });
+  // 이전 버튼 클릭 이벤트
+  profilePrevBtn.addEventListener("click", () => {
+    moveProfileSlider(profileSlideWidth);
+  });
 
-    // 다음 버튼 클릭 이벤트
-    nextBtn.addEventListener('click', () => {
-        moveSlider(-slideWidth); // 1000px 우측 이동
-    });
+  // 다음 버튼 클릭 이벤트
+  profileNextBtn.addEventListener("click", () => {
+    moveProfileSlider(-profileSlideWidth);
+  });
+
+  // TMI 포토 슬라이더 관련 이벤트 리스너
+  const tmiPrevArrow = document.querySelector("#arrow .fa-chevron-left");
+  const tmiNextArrow = document.querySelector("#arrow .fa-chevron-right");
+  const tmiPhotos = document.querySelectorAll(".tmi_photo p");
+  const tmiPhotoContainer = document.querySelector(".tmi_photo");
+  const tmiPhotoWidth = 550; // 이미지 하나의 너비
+  let tmiCurrentIndex = 0;
+
+  // TMI 슬라이더 업데이트 함수
+  function updateTmiSlider() {
+    const tmiOffset = -tmiCurrentIndex * tmiPhotoWidth;
+    tmiPhotoContainer.style.transform = `translateX(${tmiOffset}px)`;
+  }
+
+  // 왼쪽 화살표 클릭 시
+  tmiPrevArrow.addEventListener("click", () => {
+    if (tmiCurrentIndex > 0) {
+      tmiCurrentIndex--;
+      updateTmiSlider();
+    }
+  });
+
+  // 오른쪽 화살표 클릭 시
+  tmiNextArrow.addEventListener("click", () => {
+    if (tmiCurrentIndex < tmiPhotos.length - 1) {
+      tmiCurrentIndex++;
+      updateTmiSlider();
+    }
+  });
 });
-
