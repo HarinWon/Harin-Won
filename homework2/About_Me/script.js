@@ -1,4 +1,3 @@
-// script.js
 document.addEventListener("DOMContentLoaded", () => {
   // 모달 관련 이벤트 리스너
   const modalBtn = document.querySelector("#open");
@@ -51,28 +50,85 @@ document.addEventListener("DOMContentLoaded", () => {
   const tmiNextArrow = document.querySelector("#arrow .fa-chevron-right");
   const tmiPhotos = document.querySelectorAll(".tmi_photo p");
   const tmiPhotoContainer = document.querySelector(".tmi_photo");
+  const tmiButtons = document.querySelectorAll(".tmi_con_box button");
   const tmiPhotoWidth = 550; // 이미지 하나의 너비
   let tmiCurrentIndex = 0;
+  let tmiData = [];
+
+  // JSON 데이터 불러오기
+  fetch('tmi.json')
+    .then(response => response.json())
+    .then(data => {
+      tmiData = data.data;
+      updateTmiText();
+    })
+    .catch(error => console.error('Error loading JSON:', error));
 
   // TMI 슬라이더 업데이트 함수
   function updateTmiSlider() {
     const tmiOffset = -tmiCurrentIndex * tmiPhotoWidth;
     tmiPhotoContainer.style.transform = `translateX(${tmiOffset}px)`;
+
+    // 모든 버튼의 active 클래스 제거
+    tmiButtons.forEach(button => button.classList.remove("active"));
+    // 현재 인덱스에 해당하는 버튼에 active 클래스 추가
+    tmiButtons[tmiCurrentIndex].classList.add("active");
+
+    // TMI 텍스트 업데이트
+    updateTmiText();
+  }
+
+  // TMI 텍스트 업데이트 함수
+  function updateTmiText() {
+    const tmiTitle = document.querySelector(".tmi_txt h3");
+    const tmiDescription = document.querySelector(".tmi_txt p");
+
+    // 서서히 없어지는 애니메이션
+    tmiTitle.classList.remove("fade-in");
+    tmiDescription.classList.remove("fade-in");
+    tmiTitle.classList.add("fade-out");
+    tmiDescription.classList.add("fade-out");
+
+    setTimeout(() => {
+      tmiTitle.innerText = tmiData[tmiCurrentIndex].title;
+      tmiDescription.innerText = tmiData[tmiCurrentIndex].description;
+
+      // 서서히 나타나는 애니메이션
+      tmiTitle.classList.remove("fade-out");
+      tmiDescription.classList.remove("fade-out");
+      tmiTitle.classList.add("fade-in");
+      tmiDescription.classList.add("fade-in");
+    }, 500); // 애니메이션 시간과 일치
   }
 
   // 왼쪽 화살표 클릭 시
   tmiPrevArrow.addEventListener("click", () => {
     if (tmiCurrentIndex > 0) {
       tmiCurrentIndex--;
-      updateTmiSlider();
+    } else {
+      tmiCurrentIndex = tmiPhotos.length - 1; // 처음으로 돌아감
     }
+    updateTmiSlider();
   });
 
   // 오른쪽 화살표 클릭 시
   tmiNextArrow.addEventListener("click", () => {
     if (tmiCurrentIndex < tmiPhotos.length - 1) {
       tmiCurrentIndex++;
-      updateTmiSlider();
+    } else {
+      tmiCurrentIndex = 0; // 처음으로 돌아감
     }
+    updateTmiSlider();
   });
+
+  // 버튼 클릭 이벤트
+  tmiButtons.forEach((button, index) => {
+    button.addEventListener("click", () => {
+      tmiCurrentIndex = index;
+      updateTmiSlider();
+    });
+  });
+
+  // 초기 상태 업데이트
+  updateTmiSlider();
 });
