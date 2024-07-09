@@ -1,3 +1,4 @@
+@import url(./mobile.css);
 /* font */
 @import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap");
 
@@ -63,6 +64,7 @@ body {
   text-align: center;
   padding-top: 30px;
   padding: 30px;
+  z-index: 3;
   .sns {
     float: right;
   }
