@@ -27,7 +27,9 @@ document.addEventListener("DOMContentLoaded", () => {
     } else if (profileCurrentIndex >= profileSlideItems.length) {
       profileCurrentIndex = 0;
     }
-    profileSlider.style.transform = `translateX(${-profileCurrentIndex * 100}%)`;
+    profileSlider.style.transform = `translateX(${
+      -profileCurrentIndex * 100
+    }%)`;
   }
 
   // 이전 버튼 클릭 이벤트
@@ -70,10 +72,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // TMI 포토 슬라이더 관련 이벤트 리스너
   const tmiPrevArrow = document.querySelector("#arrow .fa-chevron-left");
   const tmiNextArrow = document.querySelector("#arrow .fa-chevron-right");
-  const tmiPhotos = document.querySelectorAll(".tmi_photo p");
   const tmiPhotoContainer = document.querySelector(".tmi_photo");
   const tmiButtons = document.querySelectorAll(".tmi_con_box button");
-  const tmiPhotoWidth = 550; // 이미지 하나의 너비
   let tmiCurrentIndex = 0;
   let tmiData = [];
 
@@ -88,6 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // TMI 슬라이더 업데이트 함수
   function updateTmiSlider() {
+    const tmiPhotoWidth = tmiPhotoContainer.offsetWidth; // 슬라이더 너비 동적 계산
     const tmiOffset = -tmiCurrentIndex * tmiPhotoWidth;
     tmiPhotoContainer.style.transform = `translateX(${tmiOffset}px)`;
 
@@ -128,14 +129,14 @@ document.addEventListener("DOMContentLoaded", () => {
     if (tmiCurrentIndex > 0) {
       tmiCurrentIndex--;
     } else {
-      tmiCurrentIndex = tmiPhotos.length - 1; // 처음으로 돌아감
+      tmiCurrentIndex = tmiButtons.length - 1; // 처음으로 돌아감
     }
     updateTmiSlider();
   });
 
   // 오른쪽 화살표 클릭 시
   tmiNextArrow.addEventListener("click", () => {
-    if (tmiCurrentIndex < tmiPhotos.length - 1) {
+    if (tmiCurrentIndex < tmiButtons.length - 1) {
       tmiCurrentIndex++;
     } else {
       tmiCurrentIndex = 0; // 처음으로 돌아감
@@ -153,4 +154,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 초기 상태 업데이트
   updateTmiSlider();
+
+  // 슬라이더 크기 변경 시 업데이트
+  window.addEventListener("resize", updateTmiSlider);
 });
