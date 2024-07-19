@@ -1,0 +1,8 @@
+@import "./scss/font.scss";
+@import "./scss/header.scss";
+@import "./scss/footer.scss";
+@import "./variable.scss";
+body {
+  font-family: "Oswald", sans-serif;
+  color: var($body-bg-color);
+}

@@ -1,0 +1,18 @@
+@charset "UTF-8";
+/*가상클래스 EXTEND로 사용*/
+.btn, body .buttons .order {
+  width: 200px;
+  padding: 7px;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+body .buttons .order {
+  background: purple;
+}

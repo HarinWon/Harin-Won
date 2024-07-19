@@ -1,0 +1,11 @@
+body {
+  background: #dfe6e9;
+}
+body .frame h1 {
+  color: #d63031;
+  font-size: 45px;
+}
+body .frame p {
+  font-size: 32px;
+  color: #636272;
+}

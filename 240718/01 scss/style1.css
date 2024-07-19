@@ -1,0 +1,13 @@
+.frame {
+  padding: 20px;
+  border: 1px solid #000;
+  text-align: center;
+}
+.frame .heading {
+  color: crimson;
+  font-size: 36px;
+}
+
+.heading {
+  color: crimson;
+}/*# sourceMappingURL=style1.css.map */
