@@ -88,6 +88,7 @@ $size: 14px;
     }
     .left_body_footer {
       .wrapper_feel {
+        text-align: center;
         display: flex;
         flex-direction: column;
         gap: 6px;
@@ -136,23 +137,25 @@ $size: 14px;
 
 /* navigation */
 .navigation {
-  width: 70px;
-  height: 110px;
+  width: 90px;
+  height: 120px;
   position: absolute;
   top: 20%;
-  right: -69px;
+  right: -88px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   .navigation_item {
     width: 100%;
-    height: 33px;
+    height: 35px;
+    line-height: 35px;
+
     background: map-get($color, theme-color);
     color: map-get($color, bg-light-color);
     text-align: center;
     line-height: 30px;
     border-radius: 0 10px 10px 0;
-    border: 2px solid map-get($color, bg-light-color);
+    border: 4px solid map-get($color, bg-light-color);
     font-size: $size;
     cursor: pointer;
   }

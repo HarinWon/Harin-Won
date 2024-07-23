@@ -5,82 +5,123 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="./style.css" />
-    <script src="https://kit.fontawesome.com/3d3f071495.js" crossorigin="anonymous"></script>
-    <script src="./script.js"></script>
+    <script
+      src="https://kit.fontawesome.com/3d3f071495.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./script.js" defer></script>
+    <style>
+      .navigation_item {
+        cursor: pointer;
+        padding: 10px;
+        display: inline-block;
+      }
+      .active {
+        background: #fff;
+        color: #000;
+      }
+      .inactive {
+        background: #55d2e4;
+        color: #fff;
+      }
+      .background-happy {
+        background-color: #ffeb3b;
+      }
+      .background-sad {
+        background-color: #2196f3;
+      }
+      .background-angry {
+        background-color: #f44336;
+      }
+      .background-annoy {
+        background-color: #9c27b0;
+      }
+    </style>
   </head>
-  <body>
+  <body data-hijacking="on" data-animation="rotate">
     <div class="background">
       <div class="outerbox">
         <main class="wrapper">
           <section class="wrapper_left">
             <div class="wrapper_left_header">
               <span>TOADY</span>
-                <span class="zero">0</span>
-                <span>| TOTAL</span>
-                <span>1234</span>
+              <span class="zero">0</span>
+              <span>| TOTAL</span>
+              <span>1234</span>
             </div>
             <div class="wrapper_left_body">
               <div class="left_body_header">
-                <div class="left_body_header_gray">
+                <div class="left_body_header_gray"></div>
+                <div class="left_body_header_line"></div>
+                <div class="left_body_profile">
+                  <div class="profile_detail">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                    <span>main</span>
+                  </div>
+                  <div class="profile_detail">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>phone</span>
+                  </div>
+                  <div class="profile_detail">
+                    <i class="fa-solid fa-at"></i>
+                    <span>email</span>
+                  </div>
+                  <div class="profile_detail">
+                    <i class="fa-brands fa-instagram"></i>
+                    <span>instar</span>
+                  </div>
                 </div>
-                <div class="left_body_header_line">
-              </div>
-              <div class="left_body_profile">
-                <div class="profile_detail">
-                  <i class="fa-solid fa-pen-to-square"></i>
-                  <span>main</span>
+                <div class="left_body_footer">
+                  <div class="wrapper_feel">
+                    <div class="feel_title">오늘의 기분</div>
+                    <form
+                      name="emotion"
+                      action="http://localhost:3000"
+                      method="post"
+                    >
+                      <select
+                        name="emotion"
+                        id="emotion"
+                        style="
+                          width: 100%;
+                          text-align: center;
+                          font-size: 18px;
+                          border-radius: 10px;
+                          padding: 5px;
+                        "
+                      >
+                        <option value="happy">기쁨 🥰</option>
+                        <option value="sad">슬픔 😢</option>
+                        <option value="angry">화남 😡</option>
+                        <option value="annoy">분노 🤬</option>
+                      </select>
+                    </form>
+                  </div>
                 </div>
-                <div class="profile_detail">
-                  <i class="fa-solid fa-phone"></i>
-                  <span>phone</span>
-                </div>
-                <div class="profile_detail">
-                  <i class="fa-solid fa-at"></i>
-                  <span>email</span>
-                </div>
-                <div class="profile_detail">
-                  <i class="fa-brands fa-instagram"></i>
-                  <span>instar</span>
-                </div>
-              </div>
-              <div class="left_body_footer">
-                <div class="wrapper_feel">
-                <div class="feel_title">오늘의 기분</div>
-                <form name="emotion" action="http://lacalhost:3000" method="post">
-                  <select name="emation" id="emation">
-                    <option value="happy">기쁨 🥰</option>
-                    <option value="sad">슬픔 😢</option>
-                    <option value="angry">화남 😡</option>
-                    <option value="annoy">분노 🤬</option>
-                  </select>
-                </form>
-                </div>
-              </div>
-              <div class="today">
+                <div class="today"></div>
               </div>
             </div>
           </section>
           <section class="wrapper_right">
             <div class="wrapper_right_header">
               <div class="right_header_title">사이좋은 사람들, 싸이월드</div>
-              <div class="right_header">사생활보호설정<i class="fa-solid fa-caret-right"></i></div>
+              <div class="right_header">
+                사생활보호설정<i class="fa-solid fa-caret-right"></i>
+              </div>
             </div>
             <div class="wrapper_right_body">
-              <!-- <iframe id="contentFrame" src="./home.html"></iframe> -->
-              <!-- <iframe id="contentFrame" src="./game.html"></iframe> -->
-              <iframe id="contentFrame" src="./jucbox.html"></iframe>
+              <iframe id="contentFrame" src="./home.html"></iframe>
             </div>
           </section>
           <section class="navigation">
-            <div class="navigation_item">홈</div>
-            <div class="navigation_item">게임</div>
-            <div class="navigation_item">쥬크박스</div>
+            <div id="menuHome" class="navigation_item active">홈</div>
+            <div id="menuGame" class="navigation_item inactive">게임</div>
+            <div id="menuJukebox" class="navigation_item inactive">
+              쥬크박스
+            </div>
           </section>
         </main>
       </div>
     </div>
   </body>
 </html>
-
-
-<!-- 기분을 선택하면 뒤에있는 배경컬러 바뀌는 (제이슨으로) -->
