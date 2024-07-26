@@ -91,6 +91,50 @@ body {
   }
 }
 
+/* Project */
+.project-inner {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: map-get($color, main-light-bg);
+  border: 1px solid map-get($color, main-item-border);
+  input[name="tabmenu"] {
+    display: none;
+  }
+  .tabs {
+    width: 300%;
+    height: 100%;
+    transition: all 0.5s;
+    .tab {
+      width: 33.3333%;
+      height: 100%;
+      display: flex;
+      & > div {
+        height: 100%;
+        &.project-info {
+          width: 25%;
+          padding: 50px;
+          position: relative;
+          h3 {
+            font-size: 20px;
+          }
+          p {
+            font: ;
+          }
+        }
+        &.project-photo {
+          width: 75%;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+  }
+}
+
 /* Plan */
 .plan-inner {
   background: map-get($color, main-font-color);

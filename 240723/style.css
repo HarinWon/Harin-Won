@@ -74,6 +74,51 @@ body .cd-section > div .content {
   margin-top: 5px;
 }
 
+/* Project */
+.project-inner {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #ddd;
+}
+.project-inner input[name=tabmenu] {
+  display: none;
+}
+.project-inner .tabs {
+  width: 300%;
+  height: 100%;
+  transition: all 0.5s;
+}
+.project-inner .tabs .tab {
+  width: 33.3333%;
+  height: 100%;
+  display: flex;
+}
+.project-inner .tabs .tab > div {
+  height: 100%;
+}
+.project-inner .tabs .tab > div.project-info {
+  width: 25%;
+  padding: 50px;
+  position: relative;
+}
+.project-inner .tabs .tab > div.project-info h3 {
+  font-size: 20px;
+}
+.project-inner .tabs .tab > div.project-info p {
+  font-size: 16px;
+}
+.project-inner .tabs .tab > div.project-photo {
+  width: 75%;
+}
+.project-inner .tabs .tab > div.project-photo img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 /* Plan */
 .plan-inner {
   background: #222;
