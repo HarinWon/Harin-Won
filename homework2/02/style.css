@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 @import url(./reset.css);
 
 body {
@@ -36,6 +37,14 @@ header {
       }
     }
   }
+  .logo {
+    filter: invert(100%);
+    a {
+      img {
+        width: 150px;
+      }
+    }
+  }
   nav {
     width: 1300px;
     display: flex;
@@ -51,7 +60,8 @@ header {
         a {
           color: #fff;
           &:hover {
-            color: crimson;
+            color: #9d725e;
+            font-weight: bold;
           }
         }
       }
@@ -63,6 +73,9 @@ header {
   &.active {
     background: #fff;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    .logo {
+      filter: invert(0);
+    }
     .gnb > li > a {
       color: #000;
     }
@@ -79,20 +92,51 @@ header {
 /* intro */
 .intro {
   height: 100vh;
-  background: url("./img/intro.jpg") center/cover no-repeat;
+  background: url("./img/width_piano_banner_photoshop.gif") center/cover no-repeat;
   display: flex;
   align-items: center;
   .heading {
     text-align: center;
     color: #fff;
+    /* position: relative; */
+    iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* pointer-events: none; */
+    /* display: none; */
+    }
+    img {
+      width: 320px;
+      position: absolute;
+      left: 40%;
+      top: 45%;
+    }
     h1 {
       font-size: 70px;
+      font-family: "Playfair Display", serif;
+      font-weight: 500;
+      /* font-style: italic; */
       margin-bottom: 40px;
+      z-index: 2;
     }
     p {
       font-size: 22px;
       line-height: 1.5rem;
       padding: 0 150px;
+    }
+    a {
+      font-size: 20px;
+      border: 2px solid #fff;
+      padding: 10px 50px;
+      border-radius: 50px;
+      transition: all 0.3s;
+      &:hover {
+        font-weight: bold;
+        background: rgba(255, 255, 255, 0.3);
+      }
     }
   }
 }
@@ -101,21 +145,41 @@ header {
 .about_content {
   display: flex;
   padding: 150px 0;
+  align-items: center;
   div {
-    padding: 30px;
     &.desc {
-      text-align: center;
       flex: 3;
+      .desc_con {
+        display: flex;
+        gap: 10px;
+        div {
+          margin-top: 20px;
+          border-right: 1px solid #ddd;
+          &:last-child {
+            border: none;
+          }
+        }
+      }
       h2 {
         font-size: 30px;
+        padding-right: 30px;
+        color: #9d725e;
+        &:first-child {
+          color: #000;
+        }
+      }
+      hr {
+        margin-top: 10px;
+        width: 40px;
+        border: none;
+        height: 3px;
+        background: #9d725e;
       }
       p {
         font-size: 16px;
-        line-height: 1.7rem;
-        margin: 30px 0 40px;
       }
       a {
-        color: crimson;
+        color: #9d725e;
         font-weight: bold;
         &:hover {
           text-decoration: underline;
@@ -135,16 +199,58 @@ header {
 /* Ranking */
 .ranking {
   background: #f8f8f8;
-  .ranking_content {
+  .brand_content {
     padding: 100px 0;
     h2 {
       font-size: 30px;
       font-weight: 600;
-      margin-bottom: 50px;
+      margin-bottom: 20px;
+    }
+    hr {
+      margin-top: 10px;
+      width: 40px;
+      border: none;
+      height: 3px;
+      background: #9d725e;
     }
     .items {
       display: flex;
       justify-content: space-between;
+      .item_txt {
+        width: 500px;
+        padding-top: 20%;
+        .item_txt_inner {
+          display: flex;
+          h1 {
+            padding-top: 6px;
+          }
+          .item_txt_spinner {
+            width: 150px;
+            height: 40px;
+            overflow: hidden;
+            text-align: center;
+            font-size: 30px;
+            font-weight: bold;
+            color: #9d725e;
+            position: relative;
+            p {
+              margin: 0;
+              position: absolute;
+              width: 100%;
+              top: 40px;
+              animation: slide 2.8s infinite;
+              &:nth-child(1) {
+                /* animation-delay: 0s; */
+                background: #f8f8f8;
+                z-index: 1;
+              }
+              &:nth-child(2) {
+                animation-delay: 1.4s;
+              }
+            }
+          }
+        }
+      }
       .item {
         width: 390px;
         height: 600px;
@@ -168,12 +274,8 @@ header {
             font-size: 16px;
             padding: 2px 10px;
             color: #fff;
-            &.must {
-              background: crimson;
-            }
-            &.good {
-              background: dodgerblue;
-            }
+            border-radius: 10px;
+            background: #9d725e;
           }
           h3 {
             font-size: 22px;
@@ -184,8 +286,8 @@ header {
             margin-bottom: 16px;
           }
           .btn-explore {
-            color: crimson;
-            font-weight: 500;
+            color: #9d725e;;
+            font-weight: 600;
             img {
               transition: all 0.3s;
             }
@@ -214,21 +316,24 @@ header {
       width: 120px;
       height: 4px;
       border: none;
-      background: dodgerblue;
+      background: #9d725e;
     }
     .myslider {
       display: flex;
+      text-align: left;
       .client {
         display: flex;
-        align-items: center;
+        /* align-items: center; */
         gap: 20px;
-        /* flex-direction: column; */
+        flex-direction: column;
         margin-bottom: 10px;
         img {
-          width: 85px;
-          border-radius: 50%;
+          width: 80%;
+          height: 300px;
+          border-radius: 20px;
         }
         span {
+          width: 80%;
           b {
             display: block;
             font-size: 18px;
@@ -236,7 +341,7 @@ header {
         }
       }
       .coment {
-        text-align: center;
+        text-align: left;
         width: 74%;
         font-size: 16px;
         line-height: 1.6rem;
@@ -257,18 +362,14 @@ button.slick-arrow {
 .callaction {
   width: 100%;
   height: 450px;
-  background: url("./img/callaction-01.jpg") center/cover no-repeat;
+  background: url("./img/closeup-hands-playing-piano-music-hobby-concept.jpg") center/cover no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
   &::before {
     content: "";
-    background: linear-gradient(
-      to right,
-      rgba(160, 8, 160, 0.5),
-      rgba(6, 87, 24, 0.8)
-    );
+    background: rgba(0, 0, 0, 0.7);
     width: 100%;
     height: 100%;
     position: absolute;
@@ -281,14 +382,24 @@ button.slick-arrow {
     color: #fff;
     h2 {
       font-size: 48px;
-      font-weight: 300;
-      margin-bottom: 50px;
+      font-family: "Playfair Display", serif;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+    p {
+      width: 700px;
+      margin-bottom: 30px;
     }
     a {
-      background: #2ecc71;
+      background: rgba(255, 255, 255, 0.1);
+      border: 2px solid #fff;
       padding: 10px 20px;
-      border-radius: 5px;
+      border-radius: 30px;
       font-size: 18px;
+      transition: all 0.3s;
+      &:hover {
+        background: rgba(255, 255, 255, 0.3);
+      }
     }
   }
 }
@@ -301,12 +412,12 @@ button.slick-arrow {
       h6 {
         text-transform: uppercase;
         font-size: 16px;
-        color: dodgerblue;
+        color: #9d725e;
       }
       h2 {
         text-transform: uppercase;
         font-size: 48px;
-        margin: 50px 0;
+        margin: 10px 0;
       }
       p {
         font-size: 28px;
@@ -314,7 +425,7 @@ button.slick-arrow {
         margin-bottom: 16px;
       }
       .btn-explore {
-        color: crimson;
+        color: #9d725e;
         font-weight: 500;
         img {
           transition: all 0.3s;
@@ -329,6 +440,13 @@ button.slick-arrow {
       border-bottom: 1px solid #ddd;
       margin: 50px 0;
     }
+    h2 {
+      margin-bottom: 40px;
+      span {
+        color: #9d725e;
+        font-size: 30px;
+      }
+    }
     .post_content {
       display: flex;
       gap: 20px;
@@ -336,7 +454,6 @@ button.slick-arrow {
         h6 {
           font-size: 16px;
           text-transform: uppercase;
-          color: dodgerblue;
           margin-bottom: 30px;
         }
         .post_item {
@@ -355,12 +472,11 @@ button.slick-arrow {
           }
           .post_desc {
             h3 {
-              text-transform: uppercase;
-              font-size: 35px;
+              font-size: 20px;
             }
             p {
-              font-size: 18px;
-              line-height: 1.6rem;
+              font-size: 16px;
+              line-height: 1.4rem;
               span {
                 display: block;
                 margin-top: 20px;
@@ -379,7 +495,6 @@ button.slick-arrow {
       flex-direction: column;
       h6 {
         font-size: 16px;
-        text-transform: uppercase;
         color: dodgerblue;
         margin-bottom: 30px;
       }
@@ -387,7 +502,7 @@ button.slick-arrow {
         display: flex;
         gap: 20px;
         .post_image {
-          /* width: 00px; */
+          /* width: 300px; */
           height: 100%;
           border-radius: 30px 0 30px 0;
           overflow: hidden;
@@ -399,8 +514,7 @@ button.slick-arrow {
         }
         .post_desc {
           h3 {
-            text-transform: uppercase;
-            font-size: 35px;
+            font-size: 20px;
           }
           p {
             font-size: 18px;
@@ -417,6 +531,23 @@ button.slick-arrow {
           margin-bottom: 50px;
         }
       }
+    }
+  }
+}
+
+.sns {
+  text-align: center;
+  margin-top: 50px;
+  a {
+    border: 2px solid #9d725e;
+    padding: 10px 20px;
+    color: #9d725e;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: all 0.3s;
+    &:hover {
+      background: #9d725e;
+      color: #fff;
     }
   }
 }
@@ -448,9 +579,9 @@ button.slick-arrow {
         font-size: 16px;
         background: #fff;
         padding: 6px;
-        border-radius: 5px;
+        border-radius: 20px;
         &:nth-child(1) {
-          background: #fac53b;
+          background: #9d725e;
           color: #fff;
         }
         &:nth-child(2) {
@@ -464,10 +595,26 @@ button.slick-arrow {
 
 /* Footer */
 footer {
-  background: #000;
+  position: relative;
+  background-image: url(./img/music-instrument-store.jpg);
+  background-position: right;
+  background-size: cover;
+  background-repeat: no-repeat;
   padding: 30px 0;
   color: #fff;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 반투명 오버레이 */
+    z-index: 1; /* 오버레이의 z-index 설정 */
+  }
   .footer_content {
+    position: relative;
+    z-index: 2;
     display: flex;
     justify-content: space-around;
     ul {
@@ -476,12 +623,6 @@ footer {
         &:first-child {
           color: #d9d9d9;
           font-weight: 500;
-          a {
-            color: #959595;
-            &:hover {
-              text-decoration: underline;
-            }
-          }
         }
         &.help {
           li {
@@ -495,15 +636,20 @@ footer {
       }
     }
   }
+  br, hr, p {
+    position: relative;
+    z-index: 2;
+  }
 }
 
 /* GotoTop */
 .gototop {
+  z-index: 100;
   width: 50px;
   height: 50px;
   display: inline-block;
   border-radius: 50%;
-  background: linear-gradient(45deg, skyblue, #c1e4f2);
+  background: #9d725e;
   color: #fff;
   font-size: 30px;
   text-align: center;
@@ -616,12 +762,17 @@ footer {
     flex-direction: column;
   }
 
-  /* Ranking */
-  .ranking {
-    .ranking_content {
+  /* Brand */
+  .brand {
+    .brand_content {
       padding: 50px 0;
       .items {
         flex-direction: column;
+        .item_txt {
+          width: 100%;
+          display: block; 
+          margin-bottom: 20px;
+        }
         .item {
           width: 100%;
           border-radius: 7px;
@@ -705,4 +856,20 @@ footer {
     flex-direction: column;
     gap: 25px;
   }
+  hr {
+    margin: 10px 0;
+  }
+  p {
+    text-align: right;
+  }
+}
+
+
+/* animation */
+@keyframes slide {
+  0% { top: 0; }
+  25% { top: 0; }
+  50% { top: -40px; }
+  75% { top: -40px; }
+  100% { top: 0; }
 }

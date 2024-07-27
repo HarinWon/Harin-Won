@@ -73,3 +73,15 @@ $(document).ready(function () {
 $(".gototop, .gnb a").click(function () {
   $.scrollTo(this.hash || 0, 800);
 });
+
+
+// brand spinner
+const spinner = document.querySelector('.item_txt_spinner');
+const pTags = spinner.querySelectorAll('p');
+let currentIndex = 0;
+
+setInterval(() => {
+  pTags[currentIndex].style.top = '-40px'; // 현재 p 태그를 위로 이동
+  currentIndex = (currentIndex + 1) % pTags.length; // 다음 p 태그로 인덱스 업데이트
+  pTags[currentIndex].style.top = '0'; // 다음 p 태그를 원래 위치로 이동
+}, 1400);
