@@ -89,6 +89,11 @@ header {
   }
 }
 
+/* 추가: trigger 색상 변경 */
+.trigger.color span {
+  background: #000;
+}
+
 /* intro */
 .intro {
   height: 100vh;
@@ -449,7 +454,7 @@ button.slick-arrow {
     }
     .post_content {
       display: flex;
-      gap: 20px;
+      gap: 60px;
       .recent_post_items {
         h6 {
           font-size: 16px;
@@ -457,8 +462,8 @@ button.slick-arrow {
           margin-bottom: 30px;
         }
         .post_item {
-          display: flex;
-          gap: 20px;
+          /* display: flex; */
+
           .post_image {
             /* width: 360px; */
             height: 100%;
@@ -471,6 +476,7 @@ button.slick-arrow {
             }
           }
           .post_desc {
+            width: 500px;
             h3 {
               font-size: 20px;
             }
@@ -495,7 +501,6 @@ button.slick-arrow {
       flex-direction: column;
       h6 {
         font-size: 16px;
-        color: dodgerblue;
         margin-bottom: 30px;
       }
       .post_item {
@@ -513,6 +518,7 @@ button.slick-arrow {
           }
         }
         .post_desc {
+          width: 500px;
           h3 {
             font-size: 20px;
           }
@@ -718,9 +724,12 @@ footer {
       span {
         width: 100%;
         height: 1px;
-        background: #000;
+        background: #fff;
         position: absolute;
         transition: all 0.3s;
+        .color {
+          background: #000;
+        }
         &:nth-child(1) {
           top: 0;
         }
@@ -765,7 +774,7 @@ footer {
         flex-direction: column;
         text-align: center;
         div {
-          border: none;
+          border: none !important; 
           }
         }
       }
@@ -787,7 +796,7 @@ footer {
           display: block; 
           margin-bottom: 20px;
           .item_txt_inner {
-            margin-top: 10px;
+            mar
             h1 {
               font-size: 20px;
               &:first-child {
@@ -843,13 +852,12 @@ footer {
       }
     }
     .post_content {
-      flex-direction: column;
       .recent_post_items,
       .shard_post_items {
         .post_item {
-          flex-direction: column;
+          /* flex-direction: column; */
           .post_image {
-            width: 100%;
+            width: 300px;
             border-radius: 7px;
           }
         }
@@ -871,7 +879,6 @@ footer {
       }
     }
   }
-}
 
 /* Footer */
 footer {

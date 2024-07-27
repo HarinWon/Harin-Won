@@ -3,15 +3,19 @@ window.addEventListener("scroll", () => {
   let scroll = window.scrollY;
   const header = document.querySelector("header");
   const gototop = document.querySelector(".gototop");
+  const triggerColor = document.querySelector(".trigger");
 
   if (scroll > 50) {
     header.classList.add("active");
     gototop.classList.add("active");
+    triggerColor.classList.add("color"); // 스크롤 시 trigger 색상 변경 클래스 추가
   } else {
     header.classList.remove("active");
     gototop.classList.remove("active");
+    triggerColor.classList.remove("color"); // 스크롤 시 trigger 색상 변경 클래스 제거
   }
 });
+
 
 // 메뉴 트리거 및 GNB 링크 클릭 이벤트 리스너 추가
 const trigger = document.querySelector(".trigger");
