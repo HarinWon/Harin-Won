@@ -197,7 +197,7 @@ header {
 }
 
 /* Ranking */
-.ranking {
+.brand {
   background: #f8f8f8;
   .brand_content {
     padding: 100px 0;
@@ -760,10 +760,24 @@ footer {
   /* About */
   .about_content {
     flex-direction: column;
+    .desc {
+      .desc_con {
+        flex-direction: column;
+        text-align: center;
+        div {
+          border: none;
+          }
+        }
+      }
+    }
+    .photo {
+      display: none;
+    }
   }
 
   /* Brand */
   .brand {
+    flex-direction: column;
     .brand_content {
       padding: 50px 0;
       .items {
@@ -772,6 +786,15 @@ footer {
           width: 100%;
           display: block; 
           margin-bottom: 20px;
+          .item_txt_inner {
+            margin-top: 10px;
+            h1 {
+              font-size: 20px;
+              &:first-child {
+                display: none;
+              }
+            }
+          }
         }
         .item {
           width: 100%;
