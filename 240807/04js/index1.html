@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="./script1.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        margin-top: 100px;
+      }
+
+      .container {
+        width: 1200px;
+      }
+
+      .heading {
+        display: flex;
+        gap: 40px;
+        justify-content: space-between;
+        align-items: center; /* 수정된 부분 */
+      }
+
+      .desc {
+        width: 60%;
+      }
+
+      .desc p {
+        margin: 20px 0;
+      }
+
+      .orderInfo {
+        margin-top: 20px;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="heading">
+        <div class="img">
+          <img
+            src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/d8b70d7e-a3b7-42f2-b3ef-b0db136d7175/gt-%ED%97%88%EC%8A%AC-3-ep-%EC%9D%BC%EB%A0%89%ED%8A%B8%EB%A6%AD-%EB%86%8D%EA%B5%AC%ED%99%94-qMKi22Hy.png"
+            style="width: 280px"
+            alt=""
+          />
+        </div>
+        <div class="desc">
+          <h1>상품설명</h1>
+          <h2>상품명 : 나이키 G.T 허슬 3 EP 일렉트릭</h2>
+          <p>
+            이 중 스택 줌에어 유닉이 막강한 파워를 지공하고 토이 좋은 간파가
+            안정성과 시원함을 유지합니다.
+          </p>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit
+            neque aut impedit distinctio assumenda nihil officiis deleniti sint
+            provident nam nesciunt placeat, cupiditate dolore voluptates
+            voluptatum eveniet repellat aliquid quaerat? Architecto soluta at
+            voluptatibus animi neque ea velit quasi libero reprehenderit, totam,
+            adipisci praesentium eveniet officiis quaerat deserunt dolor alias,
+            molestiae odit a. Consectetur odit, delectus modi porro rerum
+            molestias.
+          </p>
+          <button id="order">상품주문하기</button>
+        </div>
+      </div>
+      <div class="orderInfo"></div>
+      <!-- 추가된 부분 -->
+    </div>
+  </body>
+</html>

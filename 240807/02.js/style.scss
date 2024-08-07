@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.print {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  .star-rating {
+    color: #fff;
+    gap: 10px;
+    background: #333;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    .print {
+      color: #fff;
+    }
+    .stars {
+      color: #5c5c5c;
+      cursor: pointer;
+      .fa-star.active {
+        color: yellow;
+      }
+    }
+  }
+}
