@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/3f2ea24883.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- custom css & js -->
+    <link rel="stylesheet" href="./style.css" />
+    <script defer src="./script.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <main class="container">
+      <header>
+        <nav>
+          <div class="logo">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1280px-Netflix_2015_logo.svg.png"
+              alt="logo"
+            />
+          </div>
+          <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+        </nav>
+      </header>
+      <section class="movie"></section>
+      <section class="faq">
+        <div class="faq-inner">
+          <h1>자주 묻는 질문</h1>
+          <div class="accordion">
+            <div class="title active">Q1. Netflix란 무엇인가요?</div>
+            <div class="content">
+              A: 넷플릭스(Netflix)는 전 세계적으로 인기 있는 스트리밍 서비스로,
+              영화, TV 시리즈, 다큐멘터리, 애니메이션 등 다양한 콘텐츠를
+              인터넷을 통해 제공하는 플랫폼입니다. 넷플릭스는 또한 오리지널
+              콘텐츠를 제작하여 독점적으로 제공하기도 합니다. 가입자들은 광고
+              없이 원하는 콘텐츠를 언제 어디서나 시청할 수 있으며, 다양한
+              기기에서 쉽게 접근할 수 있습니다.
+            </div>
+            <div class="title">Q2. Netflix 요금은 얼마인가요?</div>
+            <div class="content">
+              A: 넷플릭스 요금은 선택하는 멤버십 플랜에 따라 다릅니다. 기본,
+              스탠다드, 프리미엄 플랜이 있으며, 각 플랜은 화질과 동시 스트리밍
+              가능한 기기 수에 따라 가격이 다릅니다. 최신 요금 정보는 넷플릭스
+              웹사이트에서 확인하실 수 있습니다.
+            </div>
+            <div class="title">Q3. 어디에서 시청 가능한가요?</div>
+            <div class="content">
+              A: 넷플릭스는 인터넷에 연결된 다양한 기기에서 시청할 수 있습니다.
+              스마트 TV, 컴퓨터, 스마트폰, 태블릿, 게임 콘솔 등에서 넷플릭스를
+              이용할 수 있으며, 앱 또는 웹 브라우저를 통해 접속할 수 있습니다.
+            </div>
+            <div class="title">Q4. 멤버십을 해지하려면 어떻게 해야하요?</div>
+            <div class="content">
+              A: 넷플릭스 멤버십은 언제든지 온라인으로 해지할 수 있습니다.
+              웹사이트나 앱에서 ‘계정’으로 이동한 후 ‘멤버십 해지’ 옵션을
+              선택하시면 됩니다. 해지 후에도 다음 결제일 전까지는 넷플릭스
+              서비스를 계속 이용할 수 있습니다.
+            </div>
+            <div class="title">Q5. 어떤 컨텐츠를 시청할 수 있나요?</div>
+            <div class="content">
+              A: 넷플릭스는 다양한 장르의 영화, TV 시리즈, 다큐멘터리,
+              애니메이션 등 수천 편의 콘텐츠를 제공합니다. 오리지널 시리즈와
+              영화도 다수 포함되어 있으며, 연령대별로 적합한 콘텐츠를 선택하여
+              시청할 수 있습니다. 콘텐츠는 국가에 따라 다를 수 있습니다.
+            </div>
+            <div class="title">Q6. 아이들이 시청해도 괜찮을까요?</div>
+            <div class="content">
+              A: 넷플릭스는 다양한 연령대의 시청자를 위한 콘텐츠를 제공합니다.
+              아이들이 안전하게 시청할 수 있도록 자녀 프로필 생성, 시청 제한
+              설정, PIN 보호, 시청 기록 확인 등의 기능을 부모님께서 활용하실 수
+              있습니다. 자녀 프로필에서는 연령에 적합한 콘텐츠만 표시되며,
+              부모님이 설정한 제한에 따라 특정 콘텐츠가 차단될 수 있습니다.
+              또한, PIN을 설정해 자녀가 부적절한 콘텐츠에 접근하지 못하도록
+              보호할 수 있으며, 시청 기록을 통해 자녀가 시청한 콘텐츠를
+              모니터링할 수 있습니다.
+            </div>
+          </div>
+          <div class="newsletter">
+            <p>
+              시청할 준비가 되셨나요?<br />멤버십을 등록하거나 재시작하려면
+              이메일 주소를 입력하세요.
+            </p>
+            <form action="http://127.0.0.1:5501" method="get">
+              <input type="text" name="emailAddress" id="emailAddress" />
+              <input type="submit" value="시작하기" />
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+    <div class="modal-search">
+      <div class="close">
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+      <div class="search">
+        <form action="http://127.0.0.1:5501" method="get">
+          <input
+            type="text"
+            name="search-box"
+            id="search-box"
+            placeholder="시청하고자 하는 컨텐츠를 검색해보세요!"
+          />
+          <input type="submit" value="Search" />
+        </form>
+        <p class="hash-tag">
+          #오징어게임시즌2 #파리올림픽 #넷플릭스 #범죄도시4 #실시간생중계
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

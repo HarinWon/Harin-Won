@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  gap: 20px;
+  span {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    transition: all 0.5s;
+  }
+  :nth-child(1) {
+    background: #f00;
+    animation: animation 1s 1s infinite;
+    animation-delay: 0.5s;
+  }
+  :nth-child(2) {
+    background: dodgerblue;
+    animation: animation 1s 1s infinite;
+    animation-delay: 0.7s;
+  }
+  :nth-child(3) {
+    background: blue;
+    animation: animation 1s 1s infinite;
+    animation-delay: 1s;
+  }
+}
+
+@keyframes animation {
+  0% {
+    opacity: 0;
+    scale: 0.3;
+  }
+  30% {
+    opacity: 0.3;
+    scale: 0.5;
+  }
+  50% {
+    opacity: 0.5;
+    scale: 0.7;
+  }
+  70% {
+    opacity: 0.7;
+    scale: 0.9;
+  }
+  100% {
+    opacity: 0.7;
+    scale: 1;
+  }
+}
