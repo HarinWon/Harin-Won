@@ -1,0 +1,31 @@
+const canvas = document.querySelector("canvas");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const ctx = canvas.getContext("2d");
+
+ctx.fillStyle = "rgb(200,0,0)";
+ctx.strokeStyle = "rgb(0,0,0)";
+
+ctx.fillRect(10, 10, 200, 100);
+// ctx.strokeRect(10, 20, 200, 100);
+
+ctx.fillStyle = "rgb(0,0,200)";
+ctx.fillRect(50, 50, 120, 100);
+
+ctx.clearRect(70, 80, 80, 45);
+
+// ctx.fillStyle = "rgb(200,0,0)";
+// ctx.fillRect(10,10,50,100);
+
+// console.log(ctx);
+
+// 사각형을 만들고자 할 때 사용할 수 있는 매서드 함수
+// fillRect(x, y, width, height) : 사각형 요소의 색상을 채워줄 수 있도록 하는 함수
+// strokeRect(x, y, width, height) : 사각형 아웃라인 선을 그려주도록하는 함수
+// clearRect (x, y, width, height) : 사각형 형태의 특정 요소만큼을 삭제 사용하는 함수
+
+// 사각형을 만들고자 할 때 사용할 수 있는 매서드 속성
+// fillStyle = "색상" : 해당 도형의 색상을 채울 때 사용할 수 있는 속성
+// strokeStyle = "색상" : 해당 도형의 외각선의 색상을 지정하고자 할 때 사용할 수 있는 속성
