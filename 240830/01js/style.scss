@@ -1,0 +1,102 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 200;
+
+  .headerWrap {
+    position: relative;
+    padding: 10px 20px;
+
+    h1 {
+      color: #fff;
+      font-size: 15px;
+    }
+  }
+
+  .progressWrap {
+    position: relative;
+    width: 100%;
+    height: 1px;
+    background: #d0d0d0;
+    display: block; // 수정된 부분
+
+    .bar {
+      width: 0; // 초기 width를 0으로 설정
+      height: inherit;
+      position: absolute;
+      background: black;
+      transition: width 0.4s ease-in-out;
+    }
+  }
+
+  &.fixed {
+    position: fixed;
+    background: rgba(255, 255, 255, 0.8);
+
+    .headerWrap {
+      h1 {
+        color: #000;
+      }
+    }
+  }
+}
+
+.coverWrap {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000 url("./img/bg.jpg") center top / cover no-repeat;
+  // z-index: 100;
+  // display: none;
+
+  .overlay {
+    position: absolute;
+    width: 100%;
+    height: inherit;
+    background: rgba(0, 0, 0, 0.4);
+  }
+
+  .coverTitle {
+    position: relative;
+    text-align: center;
+
+    h1 {
+      color: #fff;
+    }
+
+    p {
+      color: #cecece;
+    }
+  }
+}
+
+.contWrap {
+  position: relative;
+  background: #fff;
+  margin-top: 100vh; // coverWrap 높이와 일치하도록 설정
+
+  .contentInnerWrap {
+    width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+
+    h4 {
+      font-size: 20px;
+      margin-top: 20px;
+    }
+  }
+}

@@ -1,0 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 200;
+}
+header .headerWrap {
+  position: relative;
+  padding: 10px 20px;
+}
+header .headerWrap h1 {
+  color: #fff;
+  font-size: 15px;
+}
+header .progressWrap {
+  position: relative;
+  width: 100%;
+  height: 1px;
+  background: #d0d0d0;
+  display: block;
+}
+header .progressWrap .bar {
+  width: 0;
+  height: inherit;
+  position: absolute;
+  background: black;
+  transition: width 0.4s ease-in-out;
+}
+header.fixed {
+  position: fixed;
+  background: rgba(255, 255, 255, 0.8);
+}
+header.fixed .headerWrap h1 {
+  color: #000;
+}
+
+.coverWrap {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000 url("./img/bg.jpg") center top/cover no-repeat;
+}
+.coverWrap .overlay {
+  position: absolute;
+  width: 100%;
+  height: inherit;
+  background: rgba(0, 0, 0, 0.4);
+}
+.coverWrap .coverTitle {
+  position: relative;
+  text-align: center;
+}
+.coverWrap .coverTitle h1 {
+  color: #fff;
+}
+.coverWrap .coverTitle p {
+  color: #cecece;
+}
+
+.contWrap {
+  position: relative;
+  background: #fff;
+  margin-top: 100vh;
+}
+.contWrap .contentInnerWrap {
+  width: 600px;
+  margin: 0 auto;
+  padding: 30px;
+}
+.contWrap .contentInnerWrap h4 {
+  font-size: 20px;
+  margin-top: 20px;
+}
